@@ -38,6 +38,8 @@
                     <td th:text="${user.email}">E-mail</td>
                     <td th:text="${user.firstName}">First Name</td>
                     <td th:text="${user.lastName}">Last Name</td>
+                    <td> <a th:href="@{/editUser/{id}(id=${user.id})}" class="btn btn-primary">Update</a>
+										</td>
                 </tr>
             </tbody>
         </table>
