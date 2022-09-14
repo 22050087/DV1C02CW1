@@ -56,6 +56,12 @@ public class WebController {
 		return "update-user";
 	}
 	
+	@GetMapping("/deleteUser/{id}")
+    public String delete(@PathVariable Long id) {
+	    userService.deleteUserById(id);
+        return "redirect:/";
+    }
+	
 	@PostMapping("/updateUser/{id}")
 	public String updateUser(@PathVariable Long id, User user) {
 		BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
